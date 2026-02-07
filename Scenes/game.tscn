@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://wgnl6pkx1qre"]
+
+[ext_resource type="Script" uid="uid://bdvry53gjaifa" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://dqajkodi5drmm" path="res://Scenes/3x3Grid.tscn" id="2_wrm1d"]
+[ext_resource type="Script" uid="uid://wpmy7j8ntqhe" path="res://Scripts/mistakes.gd" id="4_wowpa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2o6t"]
+font_size = 20
+
+[node name="Game" type="Control" unique_id=921494077]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qxrlw")
+light_color = Color(0.9220526, 0.9663213, 0.82170737, 1)
+darl_color = Color(0.92156863, 0.9647059, 0.8235294, 1)
+selected_color = Color(0.33975497, 0.6248632, 0.87805957, 1)
+highlight_color = Color(0.7988201, 0.5583732, 1, 1)
+same_number_color = Color(0.73837507, 0.3725525, 0.999996, 1)
+mistake_color = Color(0.9999077, 0.45250392, 0.38405567, 1)
+
+[node name="Main Layout group" type="VBoxContainer" parent="." unique_id=1226019804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top Spacer" type="Control" parent="Main Layout group" unique_id=961552888]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Stats" type="HBoxContainer" parent="Main Layout group" unique_id=2077983589]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Hints" type="Label" parent="Main Layout group/Stats" unique_id=912884731]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hints:"
+label_settings = SubResource("LabelSettings_e2o6t")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_wowpa")
+
+[node name="Mistakes" type="Label" parent="Main Layout group/Stats" unique_id=140411116]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mistakes:"
+label_settings = SubResource("LabelSettings_e2o6t")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_wowpa")
+
+[node name="Game Grid" type="AspectRatioContainer" parent="Main Layout group" unique_id=202703530]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Main Layout group/Game Grid" unique_id=1276459486]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="Main Layout group/Game Grid" unique_id=2013610450]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="3x3Grid" parent="Main Layout group/Game Grid/GridContainer" unique_id=372587594 instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid2" parent="Main Layout group/Game Grid/GridContainer" unique_id=921633415 instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid3" parent="Main Layout group/Game Grid/GridContainer" unique_id=89069165 instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid4" parent="Main Layout group/Game Grid/GridContainer" unique_id=21840335 instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid5" parent="Main Layout group/Game Grid/GridContainer" unique_id=1517368764 instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid6" parent="Main Layout group/Game Grid/GridContainer" unique_id=1208022046 instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid7" parent="Main Layout group/Game Grid/GridContainer" unique_id=195274597 instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid8" parent="Main Layout group/Game Grid/GridContainer" unique_id=1668433929 instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid9" parent="Main Layout group/Game Grid/GridContainer" unique_id=1625099384 instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="ControlButtons" type="HBoxContainer" parent="Main Layout group" unique_id=2095830378]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="NotesButton" type="Button" parent="Main Layout group/ControlButtons" unique_id=243210517]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Notes"
+
+[node name="Hint Button" type="Button" parent="Main Layout group/ControlButtons" unique_id=1150436978]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hint"
+
+[node name="NumberButtons" type="HBoxContainer" parent="Main Layout group" unique_id=1547032518]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Main Layout group/NumberButtons" unique_id=1725549579]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="Button2" type="Button" parent="Main Layout group/NumberButtons" unique_id=1295299021]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+
+[node name="Button3" type="Button" parent="Main Layout group/NumberButtons" unique_id=1948325797]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3"
+
+[node name="Button4" type="Button" parent="Main Layout group/NumberButtons" unique_id=511325896]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "4"
+
+[node name="Button5" type="Button" parent="Main Layout group/NumberButtons" unique_id=2119987591]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5"
+
+[node name="Button6" type="Button" parent="Main Layout group/NumberButtons" unique_id=572272725]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "6"
+
+[node name="Button7" type="Button" parent="Main Layout group/NumberButtons" unique_id=1129970193]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "7"
+
+[node name="Button8" type="Button" parent="Main Layout group/NumberButtons" unique_id=952886740]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "8"
+
+[node name="Button9" type="Button" parent="Main Layout group/NumberButtons" unique_id=1696508375]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "9"
+
+[node name="Bottom Spacer" type="Control" parent="Main Layout group" unique_id=1784334748]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Back Button" type="Button" parent="." unique_id=1624659329]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.1
+grow_horizontal = 0
+text = "X"
+
+[node name="WinScreen" type="ColorRect" parent="." unique_id=980603393]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5689727, 0.56897277, 0.5689727, 0.972549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinScreen" unique_id=422104385]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="WinScreen/VBoxContainer" unique_id=1685265325]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "You won!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackToMenuButton" type="Button" parent="WinScreen/VBoxContainer" unique_id=1569111658]
+layout_mode = 2
+text = "Back to mainmenu"
+
+[connection signal="on_mistake" from="." to="Main Layout group/Stats/Mistakes" method="_on_game_on_mistake"]
+[connection signal="pressed" from="Main Layout group/ControlButtons/NotesButton" to="." method="_on_notes_button_pressed"]
+[connection signal="pressed" from="Main Layout group/ControlButtons/Hint Button" to="." method="_on_hint_button_pressed"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="WinScreen/VBoxContainer/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]

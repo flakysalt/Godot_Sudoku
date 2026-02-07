@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://dnnc0wyxcbsbl"]
+
+[ext_resource type="Script" uid="uid://cg6fpd2ianj8b" path="res://Scripts/cell.gd" id="1_yh0nt"]
+[ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="3_imdwo"]
+
+[node name="Cell" type="ColorRect" unique_id=1966124834]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_yh0nt")
+prefilled_text_color = Color(5.515784e-05, 0.23802814, 0.71145076, 1)
+
+[node name="Label" type="Label" parent="." unique_id=60405762]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+max_font_size = 45
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=401877761]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Label" type="Label" parent="GridContainer" unique_id=1780794943]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+theme_override_font_sizes/font_size = 9
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+
+[node name="Label2" type="Label" parent="GridContainer" unique_id=1266942763]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+theme_override_font_sizes/font_size = 9
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+
+[node name="Label3" type="Label" parent="GridContainer" unique_id=165988855]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+theme_override_font_sizes/font_size = 9
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+
+[node name="Label4" type="Label" parent="GridContainer" unique_id=1001497488]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+theme_override_font_sizes/font_size = 9
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+
+[node name="Label5" type="Label" parent="GridContainer" unique_id=117561291]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+theme_override_font_sizes/font_size = 9
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+
+[node name="Label6" type="Label" parent="GridContainer" unique_id=1731315992]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+theme_override_font_sizes/font_size = 9
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+
+[node name="Label7" type="Label" parent="GridContainer" unique_id=334254097]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+theme_override_font_sizes/font_size = 9
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+
+[node name="Label8" type="Label" parent="GridContainer" unique_id=748347817]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+theme_override_font_sizes/font_size = 9
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+
+[node name="Label9" type="Label" parent="GridContainer" unique_id=1497876761]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+theme_override_font_sizes/font_size = 9
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_imdwo")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dv67yepijpr8c"]
+
+[ext_resource type="Script" uid="uid://8wrg3kruriqf" path="res://Scripts/Mainmenu.gd" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="2_853f1"]
+
+[node name="Control" type="Control" unique_id=1588607148]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tt5f1")
+
+[node name="MainScreen" type="VBoxContainer" parent="." unique_id=2055697654]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainScreen" unique_id=707422358]
+layout_mode = 2
+theme_override_font_sizes/font_size = 120
+text = "Sudoku"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="MainScreen" unique_id=994524304]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainScreen" unique_id=89160642]
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="MainScreen/VBoxContainer" unique_id=720182243]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Continue"
+
+[node name="New Game" type="Button" parent="MainScreen/VBoxContainer" unique_id=370801361]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "New Game
+"
+
+[node name="Settings" type="Button" parent="MainScreen/VBoxContainer" unique_id=1920872099]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MainScreen/VBoxContainer" unique_id=1126158016]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Quit"
+
+[node name="StreakLabel" type="Label" parent="MainScreen" unique_id=1858975207]
+layout_mode = 2
+text = "Current Streak: 
+Charges:"
+
+[node name="Choose" type="VBoxContainer" parent="." unique_id=551993736]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Easy" type="Button" parent="Choose" unique_id=1474485158]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Easy"
+
+[node name="Normal" type="Button" parent="Choose" unique_id=2014512436]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Normal"
+
+[node name="Hard" type="Button" parent="Choose" unique_id=959391225]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Hard"
+
+[node name="Very Hard" type="Button" parent="Choose" unique_id=1988353295]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Very Hard"
+
+[node name="Loading" type="VBoxContainer" parent="." unique_id=559422916]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AutoSizeLabel" type="Label" parent="Loading" unique_id=2011289003]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Generating..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_853f1")
+metadata/_custom_type_script = "uid://d11kfgsd6jgt"
+
+[node name="ProgressBar" type="ProgressBar" parent="Loading" unique_id=617233300]
+layout_mode = 2
+
+[connection signal="pressed" from="MainScreen/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MainScreen/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainScreen/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainScreen/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Choose/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="Choose/Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="Choose/Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="Choose/Very Hard" to="." method="_on_very_hard_pressed"]

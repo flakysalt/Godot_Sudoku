@@ -1,0 +1,154 @@
+[gd_scene load_steps=4 format=3 uid="uid://wgnl6pkx1qre"]
+
+[ext_resource type="Script" uid="uid://bdvry53gjaifa" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://dqajkodi5drmm" path="res://Scenes/3x3Grid.tscn" id="2_wrm1d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2o6t"]
+font_size = 20
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qxrlw")
+light_color = Color(0.83437747, 0.7851604, 0.97111684, 1)
+darl_color = Color(0.73628896, 0.6496106, 0.9548592, 1)
+selected_color = Color(0.33975497, 0.6248632, 0.87805957, 1)
+highlight_color = Color(0.71580446, 0.3026396, 0.99938685, 1)
+
+[node name="Main Layout group" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top Spacer" type="Control" parent="Main Layout group"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Stats" type="HBoxContainer" parent="Main Layout group"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Time" type="Label" parent="Main Layout group/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Time:"
+label_settings = SubResource("LabelSettings_e2o6t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Difficulty" type="Label" parent="Main Layout group/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Difficulty:"
+label_settings = SubResource("LabelSettings_e2o6t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mistakes" type="Label" parent="Main Layout group/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mistakes:"
+label_settings = SubResource("LabelSettings_e2o6t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game Grid" type="AspectRatioContainer" parent="Main Layout group"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Main Layout group/Game Grid"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="Main Layout group/Game Grid"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="3x3Grid" parent="Main Layout group/Game Grid/GridContainer" instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid2" parent="Main Layout group/Game Grid/GridContainer" instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid3" parent="Main Layout group/Game Grid/GridContainer" instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid4" parent="Main Layout group/Game Grid/GridContainer" instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid5" parent="Main Layout group/Game Grid/GridContainer" instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid6" parent="Main Layout group/Game Grid/GridContainer" instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid7" parent="Main Layout group/Game Grid/GridContainer" instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid8" parent="Main Layout group/Game Grid/GridContainer" instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="3x3Grid9" parent="Main Layout group/Game Grid/GridContainer" instance=ExtResource("2_wrm1d")]
+layout_mode = 2
+
+[node name="NumberButtons" type="HBoxContainer" parent="Main Layout group"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Main Layout group/NumberButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="Button2" type="Button" parent="Main Layout group/NumberButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+
+[node name="Button3" type="Button" parent="Main Layout group/NumberButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3"
+
+[node name="Button4" type="Button" parent="Main Layout group/NumberButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "4"
+
+[node name="Button5" type="Button" parent="Main Layout group/NumberButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5"
+
+[node name="Button6" type="Button" parent="Main Layout group/NumberButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "6"
+
+[node name="Button7" type="Button" parent="Main Layout group/NumberButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "7"
+
+[node name="Button8" type="Button" parent="Main Layout group/NumberButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "8"
+
+[node name="Button9" type="Button" parent="Main Layout group/NumberButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "9"
+
+[node name="Bottom Spacer" type="Control" parent="Main Layout group"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
