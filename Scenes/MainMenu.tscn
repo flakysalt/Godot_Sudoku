@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://dv67yepijpr8c"]
 
 [ext_resource type="Script" uid="uid://8wrg3kruriqf" path="res://Scripts/Mainmenu.gd" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://ct3vca1qu875" path="res://Scenes/streak_ui.gd" id="2_8um5k"]
 [ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://djpgmqdka1o3e" path="res://Resources/button.png" id="2_cmrfp"]
+[ext_resource type="Texture2D" uid="uid://cyp2uv3065bhe" path="res://Resources/charge.png" id="2_ghw46"]
+[ext_resource type="Texture2D" uid="uid://blgmy2wi8m4wf" path="res://Resources/cell_ful.png" id="3_koqhg"]
+[ext_resource type="Texture2D" uid="uid://8cpyoxvarpvh" path="res://Resources/flash(1).png" id="4_cmrfp"]
+[ext_resource type="Texture2D" uid="uid://fgl04ervrkxv" path="res://Resources/flash.png" id="4_df05h"]
+[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="5_df05h"]
 
 [node name="Control" type="Control" unique_id=1588607148]
 layout_mode = 3
@@ -12,83 +19,177 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tt5f1")
 
-[node name="MainScreen" type="VBoxContainer" parent="." unique_id=2055697654]
+[node name="MainScreen" type="Control" parent="." unique_id=1883818301]
 layout_mode = 1
-anchors_preset = 15
+anchor_top = 0.1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -169.40001
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="MainScreen" unique_id=707422358]
+[node name="TextureRect" type="TextureRect" parent="MainScreen" unique_id=1637828062]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65
+anchor_right = 0.925
+anchor_bottom = 0.075
+grow_horizontal = 0
+texture = ExtResource("2_cmrfp")
+
+[node name="StreakUi" type="VBoxContainer" parent="MainScreen/TextureRect" unique_id=1201359574]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+script = ExtResource("2_8um5k")
+charge_full = ExtResource("3_koqhg")
+today_charge_full = ExtResource("4_cmrfp")
+
+[node name="StreakChargesContainer" type="HBoxContainer" parent="MainScreen/TextureRect/StreakUi" unique_id=241691417]
 layout_mode = 2
-theme_override_font_sizes/font_size = 120
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainScreen/TextureRect/StreakUi/StreakChargesContainer" unique_id=83296125]
+layout_mode = 2
+texture = ExtResource("2_ghw46")
+
+[node name="TextureRect2" type="TextureRect" parent="MainScreen/TextureRect/StreakUi/StreakChargesContainer" unique_id=203502205]
+layout_mode = 2
+texture = ExtResource("2_ghw46")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainScreen/TextureRect/StreakUi" unique_id=1046264323]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="CurrentDayCharge" type="TextureRect" parent="MainScreen/TextureRect/StreakUi/HBoxContainer" unique_id=1440139358]
+layout_mode = 2
+texture = ExtResource("4_df05h")
+stretch_mode = 5
+
+[node name="StreakLabel" type="Label" parent="MainScreen/TextureRect/StreakUi/HBoxContainer" unique_id=4181247]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainScreen" unique_id=280120788]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainScreen/VBoxContainer" unique_id=707422358]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_font_sizes/font_size = 80
 text = "Sudoku"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_853f1")
+max_font_size = 80
 
-[node name="Control" type="Control" parent="MainScreen" unique_id=994524304]
-custom_minimum_size = Vector2(0, 100)
+[node name="VBoxContainer" type="VBoxContainer" parent="MainScreen/VBoxContainer" unique_id=89160642]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/separation = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainScreen" unique_id=89160642]
-layout_mode = 2
-
-[node name="Continue" type="Button" parent="MainScreen/VBoxContainer" unique_id=720182243]
+[node name="Continue" type="Button" parent="MainScreen/VBoxContainer/VBoxContainer" unique_id=720182243]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_vertical = 3
+disabled = true
 text = "Continue"
+script = ExtResource("5_df05h")
+button_text = "Continue"
 
-[node name="New Game" type="Button" parent="MainScreen/VBoxContainer" unique_id=370801361]
+[node name="New Game" type="Button" parent="MainScreen/VBoxContainer/VBoxContainer" unique_id=370801361]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "New Game
-"
+size_flags_vertical = 3
+text = "New Game"
+script = ExtResource("5_df05h")
+button_text = "New Game"
 
-[node name="Settings" type="Button" parent="MainScreen/VBoxContainer" unique_id=1920872099]
+[node name="Settings" type="Button" parent="MainScreen/VBoxContainer/VBoxContainer" unique_id=1920872099]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_vertical = 3
 text = "Settings"
+script = ExtResource("5_df05h")
+button_text = "Settings"
 
-[node name="Quit" type="Button" parent="MainScreen/VBoxContainer" unique_id=1126158016]
+[node name="Quit" type="Button" parent="MainScreen/VBoxContainer/VBoxContainer" unique_id=1126158016]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_vertical = 3
 text = "Quit"
-
-[node name="StreakLabel" type="Label" parent="MainScreen" unique_id=1858975207]
-layout_mode = 2
-text = "Current Streak: 
-Charges:"
+script = ExtResource("5_df05h")
+button_text = "Quit"
 
 [node name="Choose" type="VBoxContainer" parent="." unique_id=551993736]
 visible = false
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Easy" type="Button" parent="Choose" unique_id=1474485158]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_vertical = 3
 text = "Easy"
+script = ExtResource("5_df05h")
+button_text = "Easy"
 
 [node name="Normal" type="Button" parent="Choose" unique_id=2014512436]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_vertical = 3
 text = "Normal"
+script = ExtResource("5_df05h")
+button_text = "Normal"
 
 [node name="Hard" type="Button" parent="Choose" unique_id=959391225]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_vertical = 3
 text = "Hard"
+script = ExtResource("5_df05h")
+button_text = "Hard"
 
 [node name="Very Hard" type="Button" parent="Choose" unique_id=1988353295]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_vertical = 3
 text = "Very Hard"
+script = ExtResource("5_df05h")
+button_text = "Very Hard"
+
+[node name="Back" type="Button" parent="Choose" unique_id=1203168549]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+text = "Back"
+script = ExtResource("5_df05h")
+button_text = "Back"
 
 [node name="Loading" type="VBoxContainer" parent="." unique_id=559422916]
 visible = false
@@ -103,7 +204,7 @@ alignment = 1
 [node name="AutoSizeLabel" type="Label" parent="Loading" unique_id=2011289003]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 38
+theme_override_font_sizes/font_size = 9
 text = "Generating..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -116,11 +217,12 @@ metadata/_custom_type_script = "uid://d11kfgsd6jgt"
 [node name="ProgressBar" type="ProgressBar" parent="Loading" unique_id=617233300]
 layout_mode = 2
 
-[connection signal="pressed" from="MainScreen/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="MainScreen/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="MainScreen/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MainScreen/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MainScreen/VBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MainScreen/VBoxContainer/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainScreen/VBoxContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainScreen/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Choose/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="Choose/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="Choose/Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="Choose/Very Hard" to="." method="_on_very_hard_pressed"]
+[connection signal="pressed" from="Choose/Back" to="." method="_on_back_pressed"]

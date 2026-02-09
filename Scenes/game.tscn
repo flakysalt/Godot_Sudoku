@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bdvry53gjaifa" path="res://Scripts/game.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://dqajkodi5drmm" path="res://Scenes/3x3Grid.tscn" id="2_wrm1d"]
+[ext_resource type="Script" uid="uid://ciwm3vayyu5ft" path="res://addons/AutoSizeText/ui/AutoSizeCheckButton.gd" id="4_1l0tm"]
+[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="4_3dryh"]
+[ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="4_i6g32"]
 [ext_resource type="Script" uid="uid://wpmy7j8ntqhe" path="res://Scripts/mistakes.gd" id="4_wowpa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2o6t"]
@@ -15,26 +18,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qxrlw")
-light_color = Color(0.9220526, 0.9663213, 0.82170737, 1)
-darl_color = Color(0.92156863, 0.9647059, 0.8235294, 1)
-selected_color = Color(0.33975497, 0.6248632, 0.87805957, 1)
-highlight_color = Color(0.7988201, 0.5583732, 1, 1)
-same_number_color = Color(0.73837507, 0.3725525, 0.999996, 1)
-mistake_color = Color(0.9999077, 0.45250392, 0.38405567, 1)
+light_color = Color(1, 1, 1, 1)
+darl_color = Color(1, 1, 1, 1)
+selected_color = Color(0.55384564, 0.6400767, 0.8040283, 1)
+highlight_color = Color(0.6351, 0.71731496, 0.87, 1)
+same_number_color = Color(0.3528, 0.45684004, 0.72, 1)
+mistake_color = Color(0.85, 0.25500003, 0.25500003, 1)
 
 [node name="Main Layout group" type="VBoxContainer" parent="." unique_id=1226019804]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.05
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Top Spacer" type="Control" parent="Main Layout group" unique_id=961552888]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-
 [node name="Stats" type="HBoxContainer" parent="Main Layout group" unique_id=2077983589]
+visible = false
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
@@ -99,71 +100,114 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ControlButtons" type="HBoxContainer" parent="Main Layout group" unique_id=2095830378]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+alignment = 2
 
-[node name="NotesButton" type="Button" parent="Main Layout group/ControlButtons" unique_id=243210517]
+[node name="CheckButton" type="CheckButton" parent="Main Layout group/ControlButtons" unique_id=1213176563]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Notes"
+theme_override_font_sizes/font_size = 1
+text = "Use Notes"
+clip_text = true
+script = ExtResource("4_1l0tm")
+button_text = "Use Notes"
+max_font_size = 20
 
 [node name="Hint Button" type="Button" parent="Main Layout group/ControlButtons" unique_id=1150436978]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Hint"
 
 [node name="NumberButtons" type="HBoxContainer" parent="Main Layout group" unique_id=1547032518]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
 
 [node name="Button" type="Button" parent="Main Layout group/NumberButtons" unique_id=1725549579]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 1
 text = "1"
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "1"
 
 [node name="Button2" type="Button" parent="Main Layout group/NumberButtons" unique_id=1295299021]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 1
 text = "2"
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "2"
 
 [node name="Button3" type="Button" parent="Main Layout group/NumberButtons" unique_id=1948325797]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 1
 text = "3"
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "3"
 
 [node name="Button4" type="Button" parent="Main Layout group/NumberButtons" unique_id=511325896]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 1
 text = "4"
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "4"
 
 [node name="Button5" type="Button" parent="Main Layout group/NumberButtons" unique_id=2119987591]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 1
 text = "5"
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "5"
 
 [node name="Button6" type="Button" parent="Main Layout group/NumberButtons" unique_id=572272725]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 1
 text = "6"
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "6"
 
 [node name="Button7" type="Button" parent="Main Layout group/NumberButtons" unique_id=1129970193]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 1
 text = "7"
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "7"
 
 [node name="Button8" type="Button" parent="Main Layout group/NumberButtons" unique_id=952886740]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 1
 text = "8"
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "8"
 
 [node name="Button9" type="Button" parent="Main Layout group/NumberButtons" unique_id=1696508375]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 1
 text = "9"
-
-[node name="Bottom Spacer" type="Control" parent="Main Layout group" unique_id=1784334748]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "9"
 
 [node name="Back Button" type="Button" parent="." unique_id=1624659329]
 layout_mode = 1
@@ -192,21 +236,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 80
 alignment = 1
 
 [node name="Label" type="Label" parent="WinScreen/VBoxContainer" unique_id=1685265325]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 11
 text = "You won!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_i6g32")
+max_font_size = 80
 
 [node name="BackToMenuButton" type="Button" parent="WinScreen/VBoxContainer" unique_id=1569111658]
+custom_minimum_size = Vector2(0, 161.46)
 layout_mode = 2
-text = "Back to mainmenu"
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+clip_text = true
+script = ExtResource("4_3dryh")
+button_text = "Back to mainmenu"
+max_font_size = 50
 
 [connection signal="on_mistake" from="." to="Main Layout group/Stats/Mistakes" method="_on_game_on_mistake"]
-[connection signal="pressed" from="Main Layout group/ControlButtons/NotesButton" to="." method="_on_notes_button_pressed"]
+[connection signal="toggled" from="Main Layout group/ControlButtons/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="Main Layout group/ControlButtons/Hint Button" to="." method="_on_hint_button_pressed"]
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="WinScreen/VBoxContainer/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]

@@ -14,8 +14,8 @@ func _on_very_hard_pressed() -> void:
 func _ready() -> void:
 	gamestate = SaveSystem.new().load_game()
 	gamestate.compute_metadata()
-	$MainScreen/VBoxContainer/Continue.disabled = gamestate.is_solved()
-	$MainScreen/StreakLabel.text = "Current Streak: %s\nCharges: %s" % [gamestate.streak,gamestate.streak_charges]
+	$MainScreen/VBoxContainer/VBoxContainer/Continue.disabled = gamestate.is_solved()
+	$MainScreen/TextureRect/StreakUi.set_streak_data(gamestate)
 
 func generate_and_save(tiles_to_remove: int):
 	$Loading.visible = true
@@ -59,3 +59,7 @@ func _on_settings_pressed() -> void:
 	pass # Replace with function body.
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_back_pressed() -> void:
+	$MainScreen.visible = true
+	$Choose.visible = false

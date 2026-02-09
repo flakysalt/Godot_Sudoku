@@ -16,7 +16,7 @@ func save_game(data: GameState) -> bool:
 func load_game() -> GameState:
 	if not FileAccess.file_exists(SAVE_PATH):
 		print("Save file doesn't exist")
-		return null
+		return GameState.new()
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if file == null:

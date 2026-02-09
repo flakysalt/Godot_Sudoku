@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqajkodi5drmm"]
+[gd_scene format=3 uid="uid://dqajkodi5drmm"]
 
 [ext_resource type="Script" uid="uid://dc1hv63b16g0i" path="res://Scripts/3x_3_grid.gd" id="1_7kkl4"]
 [ext_resource type="PackedScene" uid="uid://dnnc0wyxcbsbl" path="res://Scenes/cell.tscn" id="1_vrjak"]
 
-[node name="3x3Grid" type="Control"]
+[node name="3x3Grid" type="Control" unique_id=1269985631]
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 15
@@ -16,7 +16,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("1_7kkl4")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1421027909]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,33 +24,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="AspectRatioContainer"]
+[node name="GridContainer" type="GridContainer" parent="AspectRatioContainer" unique_id=542850040]
 layout_mode = 2
 columns = 3
 
-[node name="Cell" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_vrjak")]
+[node name="Cell" parent="AspectRatioContainer/GridContainer" unique_id=1052604759 instance=ExtResource("1_vrjak")]
 layout_mode = 2
 
-[node name="Cell2" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_vrjak")]
+[node name="Cell2" parent="AspectRatioContainer/GridContainer" unique_id=2067508220 instance=ExtResource("1_vrjak")]
 layout_mode = 2
 
-[node name="Cell3" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_vrjak")]
+[node name="Cell3" parent="AspectRatioContainer/GridContainer" unique_id=977205584 instance=ExtResource("1_vrjak")]
 layout_mode = 2
 
-[node name="Cell4" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_vrjak")]
+[node name="Cell4" parent="AspectRatioContainer/GridContainer" unique_id=455951454 instance=ExtResource("1_vrjak")]
 layout_mode = 2
 
-[node name="Cell5" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_vrjak")]
+[node name="Cell5" parent="AspectRatioContainer/GridContainer" unique_id=1873474769 instance=ExtResource("1_vrjak")]
 layout_mode = 2
 
-[node name="Cell6" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_vrjak")]
+[node name="Cell6" parent="AspectRatioContainer/GridContainer" unique_id=730688204 instance=ExtResource("1_vrjak")]
 layout_mode = 2
 
-[node name="Cell7" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_vrjak")]
+[node name="Cell7" parent="AspectRatioContainer/GridContainer" unique_id=1204372869 instance=ExtResource("1_vrjak")]
 layout_mode = 2
 
-[node name="Cell8" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_vrjak")]
+[node name="Cell8" parent="AspectRatioContainer/GridContainer" unique_id=808784126 instance=ExtResource("1_vrjak")]
 layout_mode = 2
 
-[node name="Cell9" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_vrjak")]
+[node name="Cell9" parent="AspectRatioContainer/GridContainer" unique_id=4768638 instance=ExtResource("1_vrjak")]
 layout_mode = 2

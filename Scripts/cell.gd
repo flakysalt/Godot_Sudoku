@@ -45,8 +45,7 @@ func set_cell_coordinate(coordinate : Vector2i):
 func set_prefilled(is_prefilled:bool):
 	is_pre_filled = is_prefilled
 	var color = prefilled_text_color if is_prefilled else normal_text_color
-	if is_pre_filled:
-		$Label.add_theme_color_override("font_color",color)
+	$Label.add_theme_color_override("font_color",color)
 
 func edit_note(note : PackedInt32Array):
 	notes = note

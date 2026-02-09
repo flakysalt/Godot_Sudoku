@@ -14,14 +14,15 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Sudoku"
+config/name="Sudokuwu"
 run/main_scene="uid://dv67yepijpr8c"
 config/features=PackedStringArray("4.6", "Mobile")
+config/icon="uid://cgjv665ffueud"
 
 [display]
 
-window/size/viewport_width=540
-window/size/viewport_height=960
+window/size/viewport_width=1080
+window/size/viewport_height=2400
 window/handheld/orientation=1
 
 [input]

@@ -7,6 +7,10 @@ extends Control
 @export var same_number_color : Color
 @export var mistake_color : Color
 
+@export var note_button_on_color : Color
+var note_button_off_color : Color
+
+
 var cells : Array[Cell]
 var selected_cell : Cell
 
@@ -40,8 +44,8 @@ func _ready() -> void:
 	
 	#set base sudoku state
 	for i in 81:
+		cells[i].set_prefilled(gamestate.unsolved_sudoku[i] == gamestate.solved_sudoku[i])
 		if(gamestate.current_sudoku_state[i] != 0):
-			cells[i].set_prefilled(gamestate.unsolved_sudoku[i] == gamestate.current_sudoku_state[i])
 			cells[i].set_number(gamestate.current_sudoku_state[i])
 			
 	#set notes
@@ -129,3 +133,8 @@ func _on_back_button_pressed() -> void:
 
 func _on_back_to_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	is_note_mode = toggled_on
+	pass # Replace with function body.
